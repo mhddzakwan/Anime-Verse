@@ -1,21 +1,32 @@
-import 'package:animer_verse/screens/signin_screen.dart';
-import 'package:flutter/material.dart';
+import 'package:animer_verse/config/routes.dart';
 
-void main() {
+import 'package:animer_verse/providers/app_state_provider.dart';
+import 'package:animer_verse/providers/auth_provider.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:provider/provider.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp();
+
+  await GoogleSignIn.instance.initialize();
+
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'AnimeVerse',
-      theme: ThemeData(fontFamily: 'Urbanist'),
-      home: const SignInScreen(),
-      debugShowCheckedModeBanner: false,
-    );
+    return MaterialApp.router(
+        title: 'AnimeVerse',
+        theme: ThemeData(fontFamily: 'Urbanist'),
+        routerConfig: createRouter(),
+        debugShowCheckedModeBanner: false,
+      );
   }
 }
