@@ -29,9 +29,11 @@ class Anime {
   factory Anime.fromJson(Map<String, dynamic> json) {
     List<String> genreList = [];
     if (json['genres'] != null) {
-      genreList = (json['genres'] as List)
-          .map((genre) => genre['name'] as String)
-          .toList();
+      genreList = (json['genres'] as List?)
+              ?.map((g) => (g?['name'] ?? g?.toString() ?? '').toString())
+              .where((s) => s.isNotEmpty)
+              .toList() ??
+          [];
     }
 
     return Anime(

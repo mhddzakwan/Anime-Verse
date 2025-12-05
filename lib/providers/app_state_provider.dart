@@ -209,17 +209,20 @@ class AppStateProvider extends ChangeNotifier {
     List<Anime> result = _animeList;
 
     if (_selectedGenre != "All") {
+      final selected = _selectedGenre.trim().toLowerCase();
+
       result = result.where((anime) {
-        return anime.genres.any(
-            (genre) => genre.toLowerCase() == _selectedGenre.toLowerCase());
+        return anime.genres.any((genre) {
+          final g = genre?.trim().toLowerCase() ?? '';
+          return g.contains(selected);
+        });
       }).toList();
     }
 
     if (_homeSearchQuery.isNotEmpty) {
+      final q = _homeSearchQuery.trim().toLowerCase();
       result = result.where((anime) {
-        return anime.title
-            .toLowerCase()
-            .contains(_homeSearchQuery.toLowerCase());
+        return anime.title.toLowerCase().contains(q);
       }).toList();
     }
 
