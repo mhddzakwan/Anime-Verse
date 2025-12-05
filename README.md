@@ -1,16 +1,33 @@
-# animer_verse
+# AnimeVerse Flutter App
 
-A new Flutter project.
+## A. Identitas Mahasiswa
+- **Nama:** Muhammad Dzakwan Attaqiy  
+- **NIM:** 231401055  
+- **Lab:** 2  
 
-## Getting Started
+## B. Project Description
+Aplikasi ini dibuat dengan **Flutter**, merupakan aplikasi yang menampilkan daftar anime berdasarkan genre. Pengguna dapat menyimpan anime favoritnya, serta aplikasi ini memiliki fitur **login autentikasi Google** dan terintegrasi dengan **Firebase**.
 
-This project is a starting point for a Flutter application.
+## C. Screenshots Aplikasi
+Berikut beberapa tampilan dari aplikasi AnimeVerse:
 
-A few resources to get you started if this is your first Flutter project:
+1. **Sign Up Screen**  
+   <img src="assets/images/signup.jpeg" width="400"/>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+2. **Sign In Screen**  
+   <img src="assets/images/sigin.jpeg" width="400"/>
+   
+3. **Home Screen**  
+   <img src="assets/images/home.jpeg" width="400"/>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+4. **Anime Detail Screen**  
+   <img src="assets/images/detail_anime.jpeg" width="400"/>
+
+5. **Favorites Screen**  
+   <img src="assets/images/favorite.jpeg" width="400"/>
+
+6. **Profile Screen**  
+   <img src="assets/images/profile.jpeg" width="400"/>
+
+## D. Link Demo Aplikasi
+[Demo](https://youtu.be/A0ADB8931mA)
