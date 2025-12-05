@@ -22,11 +22,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => AppStateProvider()),
+        ChangeNotifierProvider(create: (_) => AuthProvider()),
+      ],
+      child: MaterialApp.router(
         title: 'AnimeVerse',
         theme: ThemeData(fontFamily: 'Urbanist'),
         routerConfig: createRouter(),
         debugShowCheckedModeBanner: false,
-      );
+      ),
+    );
   }
 }
